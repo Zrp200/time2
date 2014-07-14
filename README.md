@@ -1,8 +1,6 @@
 time2
 =====
 
-There are 3 functions of this gem:
-
 Name|Switch|Argument|Discription|Arguments|Sample Usage|
 :--:|:----:|:------:|:---------:|:-------:|:----------:|
 Clock|`-c`|`--clock`|A running clock. The only way to end this is by closing the window.|none|`time2 -c`
