@@ -1,8 +1,8 @@
 time2
 =====
 
-Name|Switch|Argument|Discription|Command Line Variables (In order)|Additional Arguments|Sample Usage|
-:--:|:----:|:------:|:---------:|:--------------------:|:------------------:|:----------:|
+Name|Switch|Argument|Discription|CLV|Optinal Arguments|Sample Usage|
+:--:|:----:|:------:|:---------:|:-:|:---------------:|:----------:|
 Clock|`-c`|`--clock`|A running clock. The only way to end this is by closing the window.|none|none|`time2 -c`
 Stopwatch|`-s`|`--stopwatch`|A running stopwatch. To pause it, press enter. To unpause it, press enter again. To end it, type in 'end'|none|`--basic` Pressing enter shows the time elapsed and ends the program|`time2 -s`` --basic`|
 Time|N/A|N/A|Displays the time|none||`time2`|
