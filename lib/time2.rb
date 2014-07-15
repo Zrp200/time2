@@ -2,10 +2,13 @@
     module Time2
         # The timer
             class Timer
-                def initialize(h=0, m=0,s=0)  
-		            orig = Time.now
-		            target = Time.new(orig.year, orig.month, orig.day, orig.hour + h.to_i, orig.min + m.to_i, orig.sec + s.to_i)
-		        end
+            	# Creates a new timer
+                	def initialize(h=0, m=0,s=0)  
+		        		orig, target = Time.now, Time.new(orig.year, orig.month, orig.day, orig.hour + ARGV[1].to_i, orig.min + ARGV[2].to_i, orig.sec + ARGV[3].to_i)
+						print "\r#{hour_format target.hour - Time.now.hour}:#{min_format target.min - Time.now.min}:#{sec_format target.sec - Time.now.sec}" until Time.now == target
+						puts "\a"
+						exit
+		        	end
 	        end
         # Turns internal minutes into user-friendly minutes
             def min_format(min)
