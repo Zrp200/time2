@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+BEGIN {
+	case ARGV[0]
+		when '--help' then ARGV[0] = '-h'
+		when '--timer' then ARGV[0] = '-t'
+		when '--clock' then ARGV[0] = 'c'
+		when '--stopwatch' then ARGV[0] = '-s'
+		when '--version then ARGV[0] = '-v'
+	end
+}
+case ARGV[0]
+	when '-h'
+		puts 'Usage: time2 [ -h | --help ] [ -c | --clock ] [ -s | --stopwatch [ --basic ] ] [ -t | --timer [ hours ] [ minutes ] [ seconds ] ]'
+		exit
+	when '-t'
+		if ARGV[1] == "--basic"
+			time = Time.now
+			gets.chomp
+			puts (Time.now.sec - time.sec)
+		else
+			orig = Time.now
+			target = Time.new(orig.year, orig.month, orig.day, orig.hour + ARGV[1].to_i, orig.min + ARGV[2].to_i, orig.sec + ARGV[3].to_i)
+			until target == Time.now
+				if 
