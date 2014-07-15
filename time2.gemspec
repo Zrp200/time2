@@ -6,4 +6,5 @@ Gem::Specification.new do |time2|
 	time2.files = ["lib/time2.rb"]
 	time2.summary = "Allows you to use timers, stopwatches, clocks, ect."
 	time2.email = "zrp200@gmail.com"
+	time2.extra_rdoc_files = ["README.md"]
 end
