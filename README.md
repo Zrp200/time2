@@ -1,10 +1,10 @@
-time2
-=====
+### Badges
+[![Code Climate](https://codeclimate.com/github/Zrp200/time2.png)](https://codeclimate.com/github/Zrp200/time2)
+# time2
 Install > `gem install time2 --pre`
 
 Gemfile `gem 'time2'`
-Command Line
-===========
+## Command Line
 Name|Switch|Argument|Discription|CLV*|Optional Arguments|Sample Usage|
 :--:|:----:|:------:|:---------:|:--:|:---------------:|:----------:|
 Clock|`-c`|`--clock`|A running clock. The only way to end this is by closing the window.|||`time2 -c`
