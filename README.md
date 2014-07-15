@@ -1,6 +1,6 @@
 time2
 =====
-Install > `gem install time2`
+Install > `gem install time2 --pre`
 
 Gemfile `gem 'time2'`
 Command Line
