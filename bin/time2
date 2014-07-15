@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+require 'time2'
+include time2
 BEGIN {
 	case ARGV[0]
 		when '--help' then ARGV[0] = '-h'
@@ -9,16 +11,24 @@ BEGIN {
 	end
 }
 case ARGV[0]
+	when '-v'
+		puts "0.0.0.pre
+		exit
 	when '-h'
 		puts 'Usage: time2 [ -h | --help ] [ -c | --clock ] [ -s | --stopwatch [ --basic ] ] [ -t | --timer [ hours ] [ minutes ] [ seconds ] ]'
 		exit
 	when '-t'
+		orig = Time.now
+		target = Time.new(orig.year, orig.month, orig.day, orig.hour + ARGV[1].to_i, orig.min + ARGV[2].to_i, orig.sec + ARGV[3].to_i)
+		print "\r#{hour_format target.hour - Time.now.hour}:#{min_format target.min - Time.now.min}:#{sec_format target.sec - Time.now.sec}" until Time.now == target
+		puts "\a"
+		exit
+	when '-s'
 		if ARGV[1] == "--basic"
 			time = Time.now
 			gets.chomp
 			puts (Time.now.sec - time.sec)
-		else
-			orig = Time.now
-			target = Time.new(orig.year, orig.month, orig.day, orig.hour + ARGV[1].to_i, orig.min + ARGV[2].to_i, orig.sec + ARGV[3].to_i)
-			until target == Time.now
-				if 
+			exit
+		end
+end
+				
